@@ -7,7 +7,7 @@ object Fibonacci{
   def fib (n: Int) : Int = n match {
    case 0 => 0
    case 1 => 1
-   case _ => fib (n - 1) + fib(n - 2)
+   case _ => fib(n - 1) + fib(n - 2)
   }
   /*non è tail perchè dopo aver eseguito la chiamata alla funzione ricorsiva non basta ritornarla, bisogna sommarla con l'altra chiamata*/
 
