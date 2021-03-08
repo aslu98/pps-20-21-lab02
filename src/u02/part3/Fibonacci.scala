@@ -1,4 +1,4 @@
-package u02.ex3
+package u02.part3
 
 import org.junit.jupiter.api.Assertions._
 import org.junit.jupiter.api.Test

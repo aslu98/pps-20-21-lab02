@@ -1,7 +1,7 @@
-package u02.ex4
+package u02.part4
 import org.junit.jupiter.api._
 import org.junit.jupiter.api.Assertions._
-import u02.ex3.Fibonacci.fib
+import u02.part3.Fibonacci.fib
 
 object GeometricShapes{
   sealed trait Shape
