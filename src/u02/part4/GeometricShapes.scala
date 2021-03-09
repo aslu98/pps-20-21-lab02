@@ -14,11 +14,6 @@ object GeometricShapes{
     case Square(l) => l*4
     case Rectangle(h, w) => (h+w)*2
   }
-  def area(shape:Shape): Double = shape match {
-    case Circle(r) => Math.pow(r,2)*Math.PI
-    case Square(l) => Math.pow(l,2)
-    case Rectangle(h, w) => h*w
-  }
 
   @Test def testPerimeter(): Unit ={
     val rectangle = Rectangle(4.0, 5.0)
@@ -27,6 +22,12 @@ object GeometricShapes{
     assertEquals((4+5)*2, perimeter(rectangle))
     assertEquals(2*2*Math.PI, perimeter(circle))
     assertEquals(5*4, perimeter(square))
+  }
+
+  def area(shape:Shape): Double = shape match {
+    case Circle(r) => Math.pow(r,2)*Math.PI
+    case Square(l) => Math.pow(l,2)
+    case Rectangle(h, w) => h*w
   }
 
   @Test def testArea(): Unit ={

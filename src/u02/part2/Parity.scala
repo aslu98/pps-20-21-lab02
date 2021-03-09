@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Assertions._
 import org.junit.jupiter.api.Test
 
 object Parity {
-  val parityFunctionLiteral = (num: Int) => num match {
+  val parityFunctionLiteral: Int => String = (num: Int) => num match {
     case num if (num % 2 == 0) => "even"
     case _ => "odd"
   }
