@@ -35,11 +35,8 @@ object Optionals {
     }
 
     def map[A](opt: Option[A])(f: A => Boolean) : Option[Boolean] = opt match {
-      case None() => None()
-      case Some(a:A) => f(a) match {
-          case true => Some(true)
-          case _ => None()
-        }
+      case Some(a:A) if f(a) => Some(true)
+      case _ => None()
     }
 
     def map2[A](opt1: Option[A], opt2: Option[A]) : Option[A] = (opt1, opt2) match{
