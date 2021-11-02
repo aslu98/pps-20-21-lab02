@@ -4,12 +4,17 @@ import org.junit.jupiter.api.Assertions._
 import org.junit.jupiter.api.Test
 
 object Fibonacci{
-  def fib (n: Int) : Int = n match {
-   case 0 => 0
-   case 1 => 1
-   case _ => fib(n - 1) + fib(n - 2)
+  
+  def fib(n: Int): Int = {
+    @tailrec
+    def fib2(n: Int, acc0: Int, acc1: Int): Int = n match {
+      case 0 => acc0
+      case 1 => acc1
+      case _ => fib2(n - 1, acc1, acc0 + acc1)
+    }
+
+    fib2(n, 0, 1)
   }
-  /*non è tail perchè dopo aver eseguito la chiamata alla funzione ricorsiva non basta ritornarla, bisogna sommarla con l'altra chiamata*/
 
   @Test def testFib(): Unit ={
     assertEquals(0, fib(0));
